@@ -179,6 +179,43 @@
   box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
 }
 
+/* ── Value Prop Landing (Gratuità Portale) ── */
+.value-prop-landing {
+  padding: 4rem 1.5rem;
+  background: #f0f4f8;
+  text-align: center;
+}
+
+.vpl-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a6fa8;
+  margin-bottom: 0.75rem;
+}
+
+.vpl-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 800;
+  color: #060e1f;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.vpl-body {
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+  color: #3d4f62;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.vpl-body strong {
+  color: #1a6fa8;
+  font-weight: 700;
+}
+
 /* ── Value Proposition Section ── */
 .value-prop {
   padding: 5rem 1.5rem;
