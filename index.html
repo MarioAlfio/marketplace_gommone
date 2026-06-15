@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketplace Nautico | Barche, Corsi e Scuole</title>
+  <meta name="description" content="Il marketplace nautico italiano. Trova barche da noleggiare, corsi di vela e motore, scuole per la patente nautica. Tutto in un'unica piattaforma." />
+  <meta name="keywords" content="noleggio barca, corso vela, patente nautica, gommone, skipper, mare" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header id="site-header">
+    <div class="header-bg" aria-hidden="true"></div>
+    <div class="header-overlay" aria-hidden="true"></div>
+    <div class="header-content">
+      <div class="header-badge" id="header-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Piattaforma attiva · Estate 2026
+      </div>
+      <h1 class="header-title">
+        🌊 Marketplace Nautico
+      </h1>
+      <p class="header-subtitle">
+        Barche, Corsi e Scuole in un'unica piattaforma
+      </p>
+      <!-- Stats rapide -->
+      <div class="header-stats" aria-label="Statistiche piattaforma">
+        <div class="hstat">
+          <span class="hstat-val" id="stat-barche">3</span>
+          <span class="hstat-lbl">Barche</span>
+        </div>
+        <div class="hstat-div" aria-hidden="true"></div>
+        <div class="hstat">
+          <span class="hstat-val" id="stat-corsi">2</span>
+          <span class="hstat-lbl">Corsi</span>
+        </div>
+        <div class="hstat-div" aria-hidden="true"></div>
+        <div class="hstat">
+          <span class="hstat-val" id="stat-scuole">2</span>
+          <span class="hstat-lbl">Scuole</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       NAV CATEGORIE
+  ══════════════════════════════════════ -->
+  <nav id="cat-nav" role="navigation" aria-label="Categorie">
+    <div class="nav-inner">
+      <button
+        class="nav-btn active"
+        id="btn-barche"
+        data-category="barche"
+        aria-pressed="true"
+        aria-label="Mostra barche">
+        <span class="nav-btn-icon" aria-hidden="true">⛵</span>
+        <span>Barche</span>
+      </button>
+      <button
+        class="nav-btn"
+        id="btn-corsi"
+        data-category="corsi"
+        aria-pressed="false"
+        aria-label="Mostra corsi">
+        <span class="nav-btn-icon" aria-hidden="true">📚</span>
+        <span>Corsi</span>
+      </button>
+      <button
+        class="nav-btn"
+        id="btn-scuole"
+        data-category="scuole"
+        aria-pressed="false"
+        aria-label="Mostra scuole patente">
+        <span class="nav-btn-icon" aria-hidden="true">🎓</span>
+        <span>Scuole Patente</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       AREA CONTENUTO
+  ══════════════════════════════════════ -->
+  <main id="main-content">
+    <div class="container">
+
+      <!-- Label categoria attiva -->
+      <div class="category-label-row">
+        <span class="category-label" id="category-label">Barche disponibili</span>
+        <span class="category-count" id="category-count"></span>
+      </div>
+
+      <!-- Grid card (popolata da JS) -->
+      <div id="listino" class="card-grid" role="list" aria-live="polite" aria-label="Lista risultati">
+        <!-- Popolato da homepage.js -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">🌊</span>
+        <span class="footer-name">Marketplace Nautico</span>
+      </div>
+      <p class="footer-copy">© 2026 Marketplace Nautico · Tutti i diritti riservati</p>
+      <nav class="footer-links" aria-label="Link footer">
+        <a href="/" class="footer-link">Home</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="sito_gommone/" class="footer-link">Noleggio Gommone</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="landing.html" class="footer-link">Servizi</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Script: prima i dati, poi la logica -->
+  <script src="js/data.js"></script>
+  <script src="js/homepage.js"></script>
+</body>
+</html>
