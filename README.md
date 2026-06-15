@@ -2,7 +2,7 @@
 
 Homepage del marketplace nautico italiano. Barche da noleggiare, corsi di vela e motore, scuole per la patente nautica — tutto in un'unica piattaforma.
 
-🌐 **Live:** [marioalfio.github.io](https://marioalfio.github.io)
+🌐 **Live:** (https://marioalfio.github.io/marketplace_gommone/)
 
 ---
 
