@@ -454,6 +454,30 @@ body {
   overflow: hidden;
 }
 
+/* Link sito inline nella card */
+.card-site-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: var(--sand-light, #c9a96e);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.card-site-inline img {
+  border-radius: 3px;
+  flex-shrink: 0;
+  background: #fff;
+  padding: 1px;
+}
+
+.card-site-inline:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
 /* Skipper info (solo barche) */
 .card-skipper {
   display: flex;

@@ -9,32 +9,32 @@
    CONFIGURAZIONE — modifica questi valori
    ───────────────────────────────────────────── */
 const CONFIG = {
-  // URL del tuo Google Sheet pubblicato come CSV
-  // Vai su File → Condividi → Pubblica sul web → CSV → copia il link
   SHEET_CSV_URL: 'https://docs.google.com/spreadsheets/d/INSERISCI_ID_FOGLIO/pub?output=csv',
 
-  // Dati skipper
-  SKIPPER_NAME:  'Marco Esposito',
-  SKIPPER_ROLE:  'Skipper certificato · Ponza',
-  SKIPPER_WA:    '393331234567',   // Numero WhatsApp: codice paese + numero, senza + o spazi
+  SKIPPER_NAME:  'Alessandro Gava',
+  SKIPPER_ROLE:  'Skipper certificato · Terracina',
+  SKIPPER_WA:    '393331234567', // ← sostituire con numero reale di Mario
 
-  // Dettagli noleggio
-  PREZZO:    '350€ / giornata intera',
+  PREZZO:    '800€ / giornata intera',
   CAPIENZA:  'Fino a 8 persone',
   ORARIO:    '09:00 – 18:00',
 
-  // Date hardcoded per test (rimosse quando SHEET_CSV_URL è configurato)
-  // Formato: 'YYYY-MM-DD'
   DEMO_BOOKED_DATES: [
-    '2026-07-04',
-    '2026-07-10',
-    '2026-07-15',
-    '2026-07-20',
-    '2026-08-01',
-    '2026-08-05',
-    '2026-08-14',
-    '2026-08-15',
-    '2026-08-21',
+    // Giugno 2026 — tutto occupato
+    '2026-06-01','2026-06-02','2026-06-03','2026-06-04','2026-06-05',
+    '2026-06-06','2026-06-07','2026-06-08','2026-06-09','2026-06-10',
+    '2026-06-11','2026-06-12','2026-06-13','2026-06-14','2026-06-15',
+    '2026-06-16','2026-06-17','2026-06-18','2026-06-19','2026-06-20',
+    '2026-06-21','2026-06-22','2026-06-23','2026-06-24','2026-06-25',
+    '2026-06-26','2026-06-27','2026-06-28','2026-06-29','2026-06-30',
+    // Luglio 2026 — tutto occupato tranne il 15
+    '2026-07-01','2026-07-02','2026-07-03','2026-07-04','2026-07-05',
+    '2026-07-06','2026-07-07','2026-07-08','2026-07-09','2026-07-10',
+    '2026-07-11','2026-07-12','2026-07-13','2026-07-14',
+    '2026-07-16','2026-07-17','2026-07-18','2026-07-19','2026-07-20',
+    '2026-07-21','2026-07-22','2026-07-23','2026-07-24','2026-07-25',
+    '2026-07-26','2026-07-27','2026-07-28','2026-07-29','2026-07-30',
+    '2026-07-31',
   ],
 };
 
@@ -320,7 +320,7 @@ function closeModal() {
 function buildWhatsAppLink(numero, dateStr) {
   const dataLeggibile = formatDateReadable(dateStr);
   const messaggio = encodeURIComponent(
-    `Ciao Marco! Vorrei prenotare il gommone per il ${dataLeggibile}. È ancora disponibile?`
+    `Ciao Alessandro! Vorrei prenotare il gommone per il ${dataLeggibile}. È ancora disponibile?`
   );
   return `https://wa.me/${numero}?text=${messaggio}`;
 }
