@@ -5,15 +5,15 @@ const DATI = {
   barche: [
     {
       id:          1,
-      nome:        'Alessandro Gava',
+      nome:        'AG Boat Rent',
       foto:        'sito_gommone/bg.jpg',
       badge:       'vera',
-      tratta:      'Terracina → Isole Pontine',
+      tratta:      'Porto Badino (Terracina) → Ponza · Palmarola',
       città:       'Terracina',
-      prezzo:      800,
+      prezzo:      'Da 800€',
       descrizione: 'Escursioni guidate a vela lungo le Isole Pontine. Max 8 persone, skipper incluso. Un\'esperienza autentica lontana dai tour di massa.',
       skipper:     'Alessandro Gava',
-      whatsapp:    '393331234567', // ← sostituire con numero reale di Mario
+      whatsapp:    '393895515209', 
       sito:        'sito_gommone/',
     },
   ],

@@ -9,33 +9,16 @@
    CONFIGURAZIONE — modifica questi valori
    ───────────────────────────────────────────── */
 const CONFIG = {
-  SHEET_CSV_URL: 'https://docs.google.com/spreadsheets/d/INSERISCI_ID_FOGLIO/pub?output=csv',
+  SHEET_CSV_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8mStmBJbrmT5HoQ3r2PmWSGyujFk_SZe_ALSjuKUFtmeVYLVH6-ean4iCeEp72rArRHgoaPTCaNq9/pub?gid=0&single=true&output=csv',
 
-  SKIPPER_NAME:  'Alessandro Gava',
-  SKIPPER_ROLE:  'Skipper certificato · Terracina',
-  SKIPPER_WA:    '393331234567', // ← sostituire con numero reale di Mario
+  SKIPPER_NAME:  'AG Boat Rent (Alessandro)',
+  SKIPPER_ROLE:  'Skipper · Porto Badino (Terracina)',
+  SKIPPER_WA:    '393895515209', 
 
-  PREZZO:    '800€ / giornata intera',
+  PREZZO:    'Da 800€ / giornata intera',
   CAPIENZA:  'Fino a 8 persone',
   ORARIO:    '09:00 – 18:00',
 
-  DEMO_BOOKED_DATES: [
-    // Giugno 2026 — tutto occupato
-    '2026-06-01','2026-06-02','2026-06-03','2026-06-04','2026-06-05',
-    '2026-06-06','2026-06-07','2026-06-08','2026-06-09','2026-06-10',
-    '2026-06-11','2026-06-12','2026-06-13','2026-06-14','2026-06-15',
-    '2026-06-16','2026-06-17','2026-06-18','2026-06-19','2026-06-20',
-    '2026-06-21','2026-06-22','2026-06-23','2026-06-24','2026-06-25',
-    '2026-06-26','2026-06-27','2026-06-28','2026-06-29','2026-06-30',
-    // Luglio 2026 — tutto occupato tranne il 15
-    '2026-07-01','2026-07-02','2026-07-03','2026-07-04','2026-07-05',
-    '2026-07-06','2026-07-07','2026-07-08','2026-07-09','2026-07-10',
-    '2026-07-11','2026-07-12','2026-07-13','2026-07-14',
-    '2026-07-16','2026-07-17','2026-07-18','2026-07-19','2026-07-20',
-    '2026-07-21','2026-07-22','2026-07-23','2026-07-24','2026-07-25',
-    '2026-07-26','2026-07-27','2026-07-28','2026-07-29','2026-07-30',
-    '2026-07-31',
-  ],
 };
 
 /* ─────────────────────────────────────────────
@@ -55,28 +38,11 @@ const pendingDates = new Set(
    FETCH GOOGLE SHEET
    ───────────────────────────────────────────── */
 
-/**
- * Carica le date prenotate dal Google Sheet pubblicato come CSV.
- * Struttura attesa del foglio:
- *   Colonna A: data (YYYY-MM-DD)
- *   Colonna B: stato ('confermato')
- *
- * Fallback: se il fetch fallisce (CORS in locale, URL non configurato, ecc.)
- * usa le DEMO_BOOKED_DATES hardcoded.
- *
- * @returns {Promise<string[]>} array di date 'YYYY-MM-DD'
- */
 async function loadBookedDates() {
-  // Se l'URL non è stato configurato, usa le date demo
-  if (CONFIG.SHEET_CSV_URL.includes('INSERISCI_ID_FOGLIO')) {
-    console.info('ℹ️  Google Sheet non configurato — uso date di esempio.');
-    return [...CONFIG.DEMO_BOOKED_DATES];
-  }
-
   try {
     const res  = await fetch(CONFIG.SHEET_CSV_URL, { cache: 'no-cache' });
     const text = await res.text();
-    const rows = text.trim().split('\n').slice(1); // salta riga header
+    const rows = text.trim().split(/\r?\n/).slice(1); // gestisce \r\n e \n
 
     return rows
       .map(row => row.split(',').map(cell => cell.trim().replace(/^"|"$/g, '')))
@@ -84,9 +50,8 @@ async function loadBookedDates() {
       .map(cols => cols[0])
       .filter(date => /^\d{4}-\d{2}-\d{2}$/.test(date));
   } catch (err) {
-    console.warn('⚠️  Impossibile caricare il Google Sheet:', err.message);
-    console.info('ℹ️  Uso date di esempio come fallback.');
-    return [...CONFIG.DEMO_BOOKED_DATES];
+    console.warn('Impossibile caricare il Google Sheet:', err.message);
+    return [];
   }
 }
 
@@ -403,4 +368,10 @@ async function init() {
 }
 
 // Avvia l'app quando il DOM è pronto
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('btn-prenota').addEventListener('click', scrollToCalendar);
+  document.getElementById('btn-prev-month').addEventListener('click', prevMonth);
+  document.getElementById('btn-next-month').addEventListener('click', nextMonth);
+  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+  init();
+});

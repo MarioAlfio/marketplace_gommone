@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noleggio Gommone Terracina | Skipper Alessandro Gava</title>
+  <title>Noleggio Gommone Terracina | AG Boat Rent</title>
   <meta name="description" content="Noleggia un gommone con skipper certificato a Terracina. Esplora le Isole Pontine, giornate indimenticabili fino a 8 persone. Prenota via WhatsApp." />
   <meta name="keywords" content="noleggio gommone terracina, gommone con skipper, escursioni isole pontine, barca terracina" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,18 +36,18 @@
       </div>
 
       <h1 class="hero-title">
-        Esplora le Isole Pontine<br />
+        Esplora Ponza e Palmarola<br />
         <span class="hero-title-accent">a bordo del tuo gommone</span>
       </h1>
 
       <p class="hero-subtitle">
-        Noleggio con skipper certificato · Partenza da Terracina · Fino a 8 persone
+        Noleggio con skipper certificato · Partenza da Porto Badino (Terracina) · Fino a 8 persone
       </p>
 
       <!-- Stats rapide -->
       <div class="hero-stats" id="hero-stats">
         <div class="hero-stat">
-          <span class="stat-value">800€</span>
+          <span class="stat-value">Da 800€</span>
           <span class="stat-label">/ giornata</span>
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <button class="btn-primary" id="btn-prenota" onclick="scrollToCalendar()">
+      <button class="btn-primary" id="btn-prenota">
         <span>Vedi disponibilità</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="6 9 12 15 18 9"></polyline>
@@ -98,11 +98,11 @@
 
       <!-- Navigazione mese -->
       <div class="cal-nav" role="navigation" aria-label="Navigazione mese">
-        <button class="cal-nav-btn" id="btn-prev-month" onclick="prevMonth()" aria-label="Mese precedente">
+        <button class="cal-nav-btn" id="btn-prev-month" aria-label="Mese precedente">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
         <span class="cal-month-label" id="cal-month-label" aria-live="polite"></span>
-        <button class="cal-nav-btn" id="btn-next-month" onclick="nextMonth()" aria-label="Mese successivo">
+        <button class="cal-nav-btn" id="btn-next-month" aria-label="Mese successivo">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       </div>
@@ -146,7 +146,7 @@
     <div class="modal-card" id="modal-card">
 
       <!-- Bottone chiudi -->
-      <button class="modal-close" id="modal-close-btn" onclick="closeModal()" aria-label="Chiudi">
+      <button class="modal-close" id="modal-close-btn" aria-label="Chiudi">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
 
@@ -159,7 +159,7 @@
       <!-- Foto + info skipper -->
       <div class="skipper-header">
         <div class="skipper-avatar-wrap">
-          <img src="skipper.jpg" alt="Foto skipper Alessandro Gava" class="skipper-avatar" id="skipper-avatar" />
+          <img src="../fotoale.jpg" alt="Foto AG Boat Rent" class="skipper-avatar" id="skipper-avatar" />
           <span class="skipper-online-badge" aria-label="Online"></span>
         </div>
         <div class="skipper-info">
@@ -167,7 +167,7 @@
           <p class="skipper-role" id="modal-skipper-role"></p>
           <div class="skipper-badge-row">
             <span class="skipper-cert-badge">⚓ Patente nautica</span>
-            <span class="skipper-cert-badge">🏝️ Isole Pontine</span>
+            <span class="skipper-cert-badge">🏝️ Ponza e Palmarola</span>
           </div>
         </div>
       </div>
@@ -205,7 +205,7 @@
         <span>Contatta lo skipper su WhatsApp</span>
       </a>
 
-      <p class="modal-note">Lo skipper risponde solitamente entro pochi minuti · Nessun anticipo richiesto</p>
+      <p class="modal-note">Lo skipper risponde solitamente entro pochi minuti </p>
 
     </div>
   </div>
