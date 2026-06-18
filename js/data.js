@@ -12,7 +12,7 @@ const DATI = {
       città:       'Terracina',
       prezzo:      'Da 800€',
       descrizione: 'Escursioni guidate a vela lungo le Isole Pontine. Max 8 persone, skipper incluso. Un\'esperienza autentica lontana dai tour di massa.',
-      skipper:     'Alessandro Gava',
+      skipper:     'Alessandro',
       whatsapp:    '393895515209', 
       sito:        'sito_gommone/',
     },
